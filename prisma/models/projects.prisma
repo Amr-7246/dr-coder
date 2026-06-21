@@ -1,0 +1,63 @@
+model Project {
+  id Int @id @default(autoincrement())
+  slug String @unique
+  title String
+  description String?
+  status ProjectStatus
+
+  // links
+  liveLink String?
+  repoLink String?
+
+  // Media 
+  projectMedia String[]
+  videos String[] 
+  thumbUrl String?
+  iconUrl String?
+  iconColor String?
+
+  // ingagment
+  likes Int @default(0)
+  views Int @default(0)
+
+  // Facts
+  isSolo Boolean @default(true)
+  isPinned Boolean @default(false)
+  sortOrder Int @default(0)
+  forCompany Boolean @default(false)
+  sideProject Boolean @default(true)
+  companyName String?
+  
+  // relations 
+  techStack TechStack[]
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+
+  // Time Stamps
+  startingDate DateTime?
+  endDate DateTime?
+  totalPeriod String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+enum ProjectStatus { 
+  DRAFT 
+  PUBLISHED 
+  ARCHIVED 
+}
+model Category {
+  id Int @id @default(autoincrement())
+  name String 
+  description String? 
+  thumbUrl String?
+  projects Project[]
+  sortOrder Int @default(0)
+}
+model TechStack {
+  id Int @id @default(autoincrement())
+  name String @unique
+  role String?
+  iconUrl String?
+  projects Project[]
+  sortOrder Int @default(0)
+}
