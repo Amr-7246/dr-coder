@@ -21,7 +21,7 @@ const LayerMask = () => {
         resize: true,
       },
       modes: {
-        grab: {distance: 170,links: {opacity: 0.45,}},
+        // grab: {distance: 170,links: {opacity: 0.45,}},
         push: {quantity: 8},
         bubble: {
           distance: 100,
@@ -88,7 +88,7 @@ const LayerMask = () => {
       },
     },
     detectRetina: true,
-  }), []);
+  } as const), []);
 
   return (
     <div className="w-full h-full fixed top-0 left-0 z-[-1] overflow-hidden">
