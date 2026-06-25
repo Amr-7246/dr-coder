@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-row items-center lg:justify-between justify-center overflow-hidden w-full h-[100vh] mx-auto -mt-25">
+    <section className="relative flex flex-row items-center lg:justify-between justify-center overflow-hidden w-full h-[100vh] mx-auto">
       
       {/* left text Section */}
         <div className={` inset-0  w-full lg:w-fit  flex flex-row items-start gap-5`}>
