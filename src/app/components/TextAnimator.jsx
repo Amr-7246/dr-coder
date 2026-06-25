@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,7 +5,7 @@ import React , {useEffect,useRef} from 'react'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TextAnimator = ({text, animation , className}: any) => {
+const TextAnimator = ({text, animation , className}) => {
   const textContainer = useRef(null)
 
   useEffect(() => {
@@ -55,7 +54,7 @@ const TextAnimator = ({text, animation , className}: any) => {
         animation == 'chuncks' ?
         //& Chuncks Animation
           <p className=' w-fit flex flex-row flex-wrap ' >
-            { text.split(' ').map((chunck:any,idx:any) => (
+            { text.split(' ').map((chunck,idx) => (
                 <span
                 style={{
                 transform: 'translate3d(10px,51px,-60px) rotateY(60deg) rotateX(-40deg)',

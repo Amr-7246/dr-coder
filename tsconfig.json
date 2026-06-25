@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/components/LayerMask.jsx", "src/app/components/Loader.jsx"  ],
+, "src/app/components/LayerMask.jsx", "src/app/components/Loader.jsx", "src/app/components/TextAnimator.jsx"  ],
   "exclude": ["node_modules"]
 }
