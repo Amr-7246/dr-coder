@@ -55,3 +55,11 @@ export const technologies = [
     { name: "Express", icon: '/images/tech/express-js-80.png' },
     { name: "React Native", icon: '/images/tech/react-native-1.svg' }
 ];
+
+//& contact data
+export const contact = [
+  { name: "gitHub",navLink:'https://github.com/Amr-7246', icon: '/images/contact/git.jpg' },
+  { name: "faceBook",navLink:'https://www.facebook.com/profile.php?id=100072170876178&locale=ar_AR', icon: '/images/contact/facebook.jpg' },
+  { name: "whatsApp",navLink:'Phone', Number : '+201124834339' ,icon: '/images/contact/whatsapp.jpg'},
+  { name: "gmail",navLink:'Mail', Number : 'aehab7246@gmail.com' , icon: '/images/contact/gmail.jpg' },
+];

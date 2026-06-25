@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/components/LayerMask.jsx", "src/app/components/Loader.jsx", "src/app/components/TextAnimator.jsx", "../components/ShowProjectDetails.tsx"  ],
+, "src/app/components/LayerMask.jsx", "src/app/components/Loader.jsx", "src/app/components/TextAnimator.jsx", "../components/ShowProjectDetails.tsx", "src/app/[locale]/contact/Earth.j'sx", "src/app/[locale]/contact/Stars.jsx"  ],
   "exclude": ["node_modules"]
 }
