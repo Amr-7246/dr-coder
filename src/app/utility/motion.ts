@@ -2,7 +2,7 @@ import { Variants } from 'framer-motion';
 
 // Types for acceptable directions and transition strings
 type Direction = 'left' | 'right' | 'up' | 'down' | '';
-type TransitionType = 'tween' | 'spring' | 'inertia' | string;
+type TransitionType = 'tween' | 'spring' | 'inertia';
 
 export const textVariant = (delay: number): Variants => ({
   hidden: { y: -50, opacity: 0 },
