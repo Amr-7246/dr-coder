@@ -5,8 +5,8 @@ export interface ProjectFormState {
     slug: string;
     description: string;
     status: ProjectStatus ;
-    liveLink: string;
-    repoLink: string;
+    liveLink: string|null;
+    repoLink: string|null;
     thumbUrl: string;
     iconUrl: string;
     iconColor: string;

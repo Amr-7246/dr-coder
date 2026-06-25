@@ -9,9 +9,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-row items-center justify-between overflow-hidden w-full h-screen mx-auto">
+    <section className="relative flex flex-row items-center lg:justify-between justify-center overflow-hidden w-full h-[100vh] mx-auto -mt-25">
+      
       {/* left text Section */}
-        <div className={` inset-0  w-fit  flex flex-row items-start gap-5`}>
+        <div className={` inset-0  w-full lg:w-fit  flex flex-row items-start gap-5`}>
           <div className="flex flex-col justify-center items-center mt-[40px]">
             <div className="w-5 h-5 rounded-full bg-[var(--orange)]" />
             <div className="w-1 sm:h-120 h-80 violet-gradient" />
@@ -36,7 +37,7 @@ const Hero = () => {
               <div className=" px-3 mt-1 text-[var(--orange)] gap-3 font-black w-fit flex justify-center items-center">
                 Open<span className="hidden ml-[-9px] md:flex ">to work</span>
                 <DotLottieReact
-                  src="/Animation/Animation - 1747322867917.lottie"
+                  src={ASSETS.home.openToWork}
                   loop
                   autoplay
                   style={{ width: "50px", height: "50px" }}
@@ -47,8 +48,8 @@ const Hero = () => {
         </div>
       {/* left text Section */}
       {/* SVG Element */}
-        <div className="  hidden lg:flex lg:mr-[2%] xl:mr-[15%] lg:w-[400px] lg:h-[400px] ">
-          <Image width={500} height={500} className="" src={ ASSETS.home.heroImg } alt="hero" />
+        <div className="  hidden lg:flex lg:mr-[2%] xl:mr-[6%] lg:w-[400px] lg:h-[400px] ">
+          <Image width={600} height={600} className="" src={ ASSETS.home.heroImg } alt="hero" />
         </div>
       {/* SVG Element */}
       {/* Animated Button for pined projects */}

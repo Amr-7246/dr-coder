@@ -3,6 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Project } from "../../types/types";
+import { ASSETS } from "@/src/assets";
 
 export const ExperienceCard = ({ project }: {project:Project}) => {
         const openWeb = (link:any) => {
@@ -28,7 +29,7 @@ export const ExperienceCard = ({ project }: {project:Project}) => {
             icon={
             <div className="flex justify-center items-center w-full h-full">
                 <img
-                src={project?.iconUrl}
+                src={project?.iconUrl||ASSETS.brand.logo}
                 alt={project?.title}
                 onClick={() => openWeb(project?.liveLink)}
                 className="w-[70%] object-contain cursor-pointer  hover:scale-[1.2] transition-transform duration-300 hover:rotate-[20deg]"

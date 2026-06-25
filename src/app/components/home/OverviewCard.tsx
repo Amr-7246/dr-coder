@@ -63,9 +63,9 @@ export const OverviewCard = () => {
             <motion.img src={ASSETS.home.amr} alt="Amr" className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[500px] lg:rounded-md shadow-lg shadow-[var(--shadow)] mb-6" initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, ease: 'easeOut' }} style={{ objectFit: 'cover' }} ref={ref} />
           </div>
 
-          <div  className='flex flex-col gap-6 w-[60%]'>
-            <motion.div  className=" !text-[15px] relative flex flex-col gap-5 border-b border-stone-700/50 pb-8 text-lg md:text-xl font-medium w-full mb-6" initial={{ opacity: 0, y: 40 }} animate={controls} style={{ wordSpacing: " 5px " , color: 'var(--text)' }} >
-              <h2 className='text-[25px] text-brand-green flex justify-start'>My Name is Amr Ehab,</h2>
+          <div  className='flex flex-col gap-6 lg:w-[60%] w-full'>
+            <motion.div  className=" text-[15px]! text-center relative flex flex-col gap-5 border-b border-stone-700/50 pb-8 text-lg md:text-xl font-medium w-full mb-6" initial={{ opacity: 0, y: 40 }} animate={controls} style={{ wordSpacing: " 5px " , color: 'var(--text)' }} >
+              <h2 className='text-[25px] text-brand-green flex lg:justify-start justify-center'>My Name is Amr Ehab,</h2>
               <p className=''>
                 I`m a <span className='text-white font-frijole'> fullstack software Developer</span> with practical, end-to-end experience crafting scalable, high-performance, and visually dynamic <span className='text-[var(--orange)] font-frijole'> web/moblie applications </span> from clean, <span className='text-[var(--orange)] font-frijole'>animated UIs </span>to backend logics and DB operations . . . . .
                 <span className=''> While I operate as a full-stack freelancer, I have intentionally chosen to <span className='text-[var(--green)] font-frijole'>specialize in Frontend Engineering </span>not just coding interfaces, but engineering immersive, interactive, performance-driven, accessible experiences powered by tools like
@@ -87,8 +87,8 @@ export const OverviewCard = () => {
                   <span className="text-base mt-1" style={{ color: 'var(--text)' }}>Projects</span>
                 </div>
               </motion.div>
-              <motion.a href="/contact" className="pb-3"  initial={{ opacity: 0, y: 40 }} animate={controls} whileHover={{ scale: 0.99 }} whileTap={{ scale: 0.97 }} >
-                <IconicBtn text={''} icon={<FaArrowRight />} iconStyle={" text-orange-500 "} buttonColors={"bg-stone-300/10 shadow-lg shadow-stone-500/10 btn backdrop-blur-6xl text-orange-500 px-8 "} />
+              <motion.a href="https://github.com/Amr-7246/dr-coder" className="pb-3"  initial={{ opacity: 0, y: 40 }} animate={controls} whileHover={{ scale: 0.99 }} whileTap={{ scale: 0.97 }} >
+                <IconicBtn text={'visit my repos'} icon={<FaArrowRight />} iconStyle={" text-text "} buttonColors={"bg-stone-300/10 shadow-lg shadow-stone-500/10 btn backdrop-blur-6xl text-orange-500 px-8 "} />
               </motion.a>
             </div>
           </div>
@@ -104,7 +104,7 @@ export const OverviewCard = () => {
                   <Image width={500} height={500} src={ASSETS.home.banner} alt="banner" className="w-fit" />
                 </div>
 
-                <h2 className='text-white text-[45px] text-center mb-10 '>
+                <h2 className='text-white text-[2rem] text-center mb-10 '>
                   Get the agility and 
                   <span className=' text-brand-orange! ml-1 '> high-level vision </span>
                   of a solo expert who owns the outcome from start to finish
@@ -118,7 +118,7 @@ export const OverviewCard = () => {
                   <Image width={500} height={500} src={ASSETS.home.greenBanner} alt="banner" className="w-fit"/>
                 </div>
 
-                <h2 className='text-white text-[45px] text-center mb-10 '>
+                <h2 className='text-white text-[2rem] text-center mb-10 '>
                   Bring in a professional who 
                   <span className=' text-brand-green! ml-1 '> instantly adapts to your culture,</span>
                   respects the hierarchy, and protects your team ecosystem
@@ -128,7 +128,9 @@ export const OverviewCard = () => {
 
         </div>
       {/*//& Smart Learning section*/}
+      <div className="hidden md:flex">
         <SmartLearning />
+        </div>
     </div>
   );
 }

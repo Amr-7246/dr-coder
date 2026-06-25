@@ -24,89 +24,30 @@ const SaturnLoader = () => {
     const orbit2 = orbit2Ref.current;
     const orbit3 = orbit3Ref.current;
 
-    // Set CSS variables
-    // const root = document.documentElement;
-    // root.style.setProperty('--orange', '#ff6b35');
-    // root.style.setProperty('--text', '#333333');
-    // root.style.setProperty('--dark-orange', '#e55a2b');
-
     const tl = gsap.timeline();
 
     // Initial setup
-    gsap.set([ball1, ball2, ball3], { 
-      scale: 0,
-      opacity: 0 
-    });
-    gsap.set(saturn, { 
-      scale: 0.5,
-      opacity: 0 
-    });
-    gsap.set(ring, { 
-      scale: 0,
-      opacity: 0,
-      rotation: -45 
-    });
+    gsap.set([ball1, ball2, ball3], { scale: 0,opacity: 0 });
+    gsap.set(saturn, { scale: 0.5,opacity: 0 });
+    gsap.set(ring, { scale: 0,opacity: 0,rotation: -45 });
 
     // Saturn entrance animation
-    tl.to(saturn, {
-      scale: 1,
-      opacity: 1,
-      duration: 1,
-      ease: "back.out(1.7)"
-    })
-    .to(ring, {
-      scale: 1,
-      opacity: 0.6,
-      duration: 0.8,
-      ease: "back.out(1.2)"
-    }, "-=0.5")
-    .to([ball1, ball2, ball3], {
-      scale: 1,
-      opacity: 1,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "back.out(1.7)"
-    }, "-=0.3");
+    tl.to(saturn, {scale: 1,opacity: 1,duration: 1,ease: "back.out(1.7)"})
+    .to(ring, {scale: 1,opacity: 0.6,duration: 0.8,ease: "back.out(1.2)"}, "-=0.5")
+    .to([ball1, ball2, ball3], {scale: 1,opacity: 1,duration: 0.6,stagger: 0.2,ease: "back.out(1.7)"}, "-=0.3");
 
     // Continuous animations
     // Saturn floating
-    gsap.to(saturn, {
-      y: -8,
-      duration: 2,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1
-    });
+    gsap.to(saturn, {y: -8,duration: 2,ease: "power2.inOut",yoyo: true,repeat: -1});
 
     // Ring rotation
-    gsap.to(ring, {
-      rotation: 315,
-      duration: 8,
-      ease: "none",
-      repeat: -1
-    });
+    gsap.to(ring, {rotation: 315,duration: 8,ease: "none",repeat: -1});
 
     // Orbit rotations with different speeds and directions
-    gsap.to(orbit1, {
-      rotation: 360,
-      duration: 4,
-      ease: "none",
-      repeat: -1
-    });
+    gsap.to(orbit1, {rotation: 360,duration: 4,ease: "none",repeat: -1});
+    gsap.to(orbit2, {rotation: -360,duration: 6,ease: "none",repeat: -1});
 
-    gsap.to(orbit2, {
-      rotation: -360,
-      duration: 6,
-      ease: "none",
-      repeat: -1
-    });
-
-    gsap.to(orbit3, {
-      rotation: 360,
-      duration: 8,
-      ease: "none",
-      repeat: -1
-    });
+    gsap.to(orbit3, {rotation: 360,duration: 8,ease: "none",repeat: -1});
 
     //& Ball pulsing animations
     gsap.to(ball1, {
@@ -150,7 +91,7 @@ const SaturnLoader = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-transparent">
+    <div className="flex items-center justify-center min-h-screen bg-transparent overflow-hidden">
       <div 
         ref={containerRef}
         className="relative w-80 h-80 flex items-center justify-center"

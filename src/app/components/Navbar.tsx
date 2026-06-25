@@ -5,11 +5,13 @@ import { FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ASSETS } from '@/src/assets';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 const navLinks = [
   { id: "/", title: "Home", },
   { id: "#about", title: "About", },
-  { id: "/experines", title: "Experines", },
+  { id: "/projects", title: "Projects", },
   { id: "/contact", title: "Contact", },
   { id: "/Resume.pdf", title: "Resume", },
 ];
@@ -18,7 +20,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [showImgCard, setShowImgCard] = useState(false);
   const [suggestIdx, setSuggestIdx] = useState(0);
-
+  const {locale} = useParams()
+  
   // Suggestion cycling effect (fade up)
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -83,7 +86,7 @@ const Navbar = () => {
                     </AnimatePresence>
                   </div>
                   <a 
-                    href={navLinks[suggestIdx]?.id} 
+                    href={`/${locale}${navLinks[suggestIdx]?.id}`} 
                     className='flex-shrink-0 !text-[var(--green)] w-[40px] h-[40px] rounded-full flex items-center justify-center p-2 border !border-[var(--green)] underline underline-offset-2 hover:!text-[var(--hovered-text)] transition-colors duration-300' 
                   >Go</a>
                 </div>
@@ -102,15 +105,20 @@ const Navbar = () => {
             </div>
           </div>
         {/* Side bar */}
-          <div style={{ transition: 'all 1000ms cubic-bezier(0.6, -0.16, 0.44, 1.25)' }} className={` !bg-[var(--dark-orange)] backdrop-blur-md ${toggle ? 'w-[90%] h-[250px] left-1/2 top-[120%] md:w-[300px] md:h-[350px] md:left-[78%] lg:left-[80%] transform -translate-x-1/2' : 'w-[0px] h-[0px] z-10 left-[90%] top-[70%]  md:left-[95%] md:top-[50%] rounded-[100%]'}  duration-[700ms] overflow-hidden mx-auto z-10 rounded-[20px] absolute `}>
-            <div className={` h-[100%] w-full flex-col justify-center py-6`}>
-              <ul className='flex !bg-[var(--orange)]/50 flex-col w-full md:py-[60px] h-full'>
-                <li className={` ${toggle ? 'opacity-1' : 'opacity-0'} duration-[600ms] delay-[300ms] flex flex-col h-full  py-[2px] items-center justify-center`}>
+          <div style={{ transition: 'all 1000ms cubic-bezier(0.6, -0.16, 0.44, 1.25)' }} className={` bg-brand-dark-orange! backdrop-blur-md ${toggle ? 'w-[90%] h-[250px] left-1/2 top-[120%] md:w-[300px] md:h-[350px] md:left-[78%] lg:left-[80%] transform -translate-x-1/2' : 'w-[0px] h-[0px] z-10 left-[90%] top-[70%]  md:left-[95%] md:top-[50%] rounded-[100%]'}  duration-[700ms] overflow-hidden mx-auto z-10 rounded-[20px] absolute `}>
+            <div className={` h-full w-full flex-col justify-center py-6`}>
+              <ul className='flex bg-(--dark-orange)/50! flex-col w-full md:py-15 h-full'>
+                <li className={` ${toggle ? 'opacity-100' : 'opacity-0'} duration-600 delay-[300ms] flex flex-col h-full  py-[2px] items-center justify-center`}>
                   {
                     navLinks.map((link) => (
-                      <a onClick={list} key={link.id} className=' not-last:border-b w-[90%] !border-[var(--border)] !text-[var(--text)]  h-[100%] flex items-center justify-center text-center hover:!text-[var(--hovered-text)]  ' href={`${link.id}`}>
+                      <Link 
+                        onClick={list} 
+                        key={link.id} 
+                        className="not-last:border-b w-[90%] border-border! text-[var(--text)]! h-full flex items-center justify-center text-center hover:text-[var(--off-white)]!" 
+                        href={`/${locale}${link.id}`}
+                      >
                         {link.title}
-                      </a>
+                      </Link>
                     ))
                   }
                 </li>

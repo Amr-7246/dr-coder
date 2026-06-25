@@ -6,9 +6,13 @@ export default function Home() {
   return (
     <div className=''>
       <LayerMask/>
-      <Hero />
+      <div className="page">
+        <Hero />
+      </div>
       <PinedProjects />
-      <About />
+      <div className="page">
+        <About />
+      </div>
     </div>
   );
 }

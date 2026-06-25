@@ -55,6 +55,8 @@ const Projects = () => {
     fetchSelectionData();
   }, [WhichCate]);
 
+  if(isLoading) {return <SaturnLoader/>}
+
   return (
     <>
       <ProjectsCategories 
@@ -66,15 +68,15 @@ const Projects = () => {
       {isLoading ? (
         <SaturnLoader />
       ) : (
-        <div id='projects' className="mt-20 max-w-125 lg:max-w-500 mx-auto flex flex-col gap-10">
+        <div id='projects' className="my-20 max-w-125 lg:max-w-500 mx-auto flex flex-col gap-10">
           <Topper text={{ left: 'My Work', right: 'Develop Your Dream App Now' }} className={''} />
           
           {projects.length < 1 ? (
             <p className="text-center text-gray-400 my-10">No projects found for this category.</p>
           ) : (
             <VerticalTimeline>
-              {projects.map((project: any, index: any) => (
-                <ExperienceCard key={`project-${project.id || index}`} experience={project} />
+              {projects.map((project: Project, index: any) => (
+                <ExperienceCard key={`project-${project.id || index}`} project={project} />
               ))}
             </VerticalTimeline>
           )}

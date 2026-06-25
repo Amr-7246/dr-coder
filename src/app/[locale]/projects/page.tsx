@@ -4,7 +4,7 @@ import Tech from "../../components/projects/Tech";
 
 export default function Page() {
     return (
-        <div className='pt-[100px]'>
+        <div className='page pt-[100px]'>
             {/* <LayerMask/> */}
             <Projects />
             <Tech />

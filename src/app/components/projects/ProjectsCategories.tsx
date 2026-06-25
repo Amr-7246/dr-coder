@@ -31,7 +31,7 @@ const ProjectsCategories = ({ categories, WhichCate, setWhichCate }: ProjectsCat
           <p>It absolutely crazy to look back at how my portfolio has grown over time! From simple designs to professional, visually stunning projects, each iteration reflects a leap in skills and creativity.</p>
         </div>
         
-        <div className='relative w-full min-h-[50vh] lg:h-[60vh] border-b border-[var(--border)]'>
+        <div className='relative w-full min-h-[50vh] lg:h-[60vh] border-b border-border overflow-hidden'>
         {categories
           .slice(0, 3)
           .map((cate, idx) => {

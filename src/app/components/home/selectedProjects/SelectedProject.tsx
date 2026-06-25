@@ -62,7 +62,7 @@ export const SideBarShell = ({ className , project, idx}:{ className:string, pro
       <div className="sidebar-content mt-3">
         {/* Progress bar */}
         <div className="sidebar-progress-container mb-3">
-          <div className="w-full h-1 bg-[var(--text)] rounded-full overflow-hidden">
+          <div className="w-full h-[1px] bg-[var(--text)] rounded-full overflow-hidden">
             <div className="sidebar-progress-bar h-full bg-[var(--orange)] origin-left scale-x-0"></div>
           </div>
         </div>

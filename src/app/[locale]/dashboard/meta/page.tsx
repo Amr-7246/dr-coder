@@ -9,7 +9,7 @@ import { Network, Trash2, RefreshCw, GitBranch, Layers, Target } from "lucide-re
 import toast from "react-hot-toast";
 import { Textarea } from "@/src/components/ui/textarea";
 
-export default function AdminMetaPage() {
+export default function Page() {
     const [catForm, setCatForm] = useState({ name: "", description: "", thumbUrl: "", sortOrder: 0 });
     const [techForm, setTechForm] = useState({ name: "", role: "", iconUrl: "", sortOrder: 0 });
     const [loading, setLoading] = useState(false);

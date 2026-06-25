@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Orbitron, Poppins, Rubik_Puddles } from "next/font/google";
+import {Syne_Mono, Bitcount_Grid_Double, Caveat, Geist, Geist_Mono, Orbitron, Poppins, Rubik_Puddles } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -35,6 +35,24 @@ const rubikPuddles = Rubik_Puddles({
   variable: '--font-rubik-puddles',
 });
 
+const syneMono = Syne_Mono({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-syne-mono',
+});
+
+const bitcountGridDouble = Bitcount_Grid_Double({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bitcount',
+});
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-caveat',
+});
+
 export const metadata: Metadata = {
   title: "Dr.coder",
   description: "simple portfolio to make the client confidence",
@@ -53,14 +71,14 @@ export default async function RootLayout({
     notFound();
   }
   
-  const direction = locale === 'ar' ? 'rtl' : 'ltr';
+  const direction = locale === 'ar' ? 'ltr' : 'ltr';
   const messages = await getMessages();
   return (
-    <html lang={locale} dir={direction} className={`${poppins.variable} ${orbitron.variable} ${rubikPuddles.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="font-sans min-h-full flex flex-col">
+    <html lang={locale} dir={direction} className={` ${syneMono.variable} ${bitcountGridDouble.variable} ${caveat.variable} ${poppins.variable} ${orbitron.variable} ${rubikPuddles.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="font-syne min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <div className="w-[85%] mx-auto  flex flex-col flex-1 items-center justify-center font-sans ">
+          <div className="relative flex flex-col flex-1 items-center justify-center">
             {children}
           </div>
           <Toaster />

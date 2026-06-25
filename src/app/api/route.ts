@@ -16,7 +16,7 @@ export async function addProject(formData: ProjectFormState) {
         
         // Links
         liveLink: z.string().url().nullable().optional(),
-        repoLink: z.string().url().nullable().optional(),
+        repoLink: z.string().nullable().optional(),
         
         // Media
         projectMedia: z.array(z.string()),
@@ -30,6 +30,8 @@ export async function addProject(formData: ProjectFormState) {
         forCompany: z.boolean().default(false),
         sideProject: z.boolean().default(true),
         companyName: z.string().nullable().optional(),
+        isPinned:z.boolean().default(false),
+        sortOrder:z.number().int().nullable().optional(),
         
         // Relations (Ids passed from UI to connect records)
         categoryId: z.number().int(),
@@ -108,7 +110,7 @@ export async function frontProjects(limitNumber: number = 10) {
     try {
         const projects = await prisma.project.findMany({
             where: {isPinned:true, status:'PUBLISHED'},
-            orderBy: {sortOrder: "asc"},
+            orderBy: {sortOrder: "desc"},
             take: limitNumber
         })
         return { success: true, data: projects }
@@ -126,7 +128,7 @@ export async function getProjects(categoryId: number | null = null) {
             ...(categoryId && { categoryId }), //! If categoryId is null, Prisma ignores it. If it has a value, it filters by it.
         },
         orderBy: {
-            sortOrder: "asc",
+            sortOrder: "desc",
         },
         });
 
