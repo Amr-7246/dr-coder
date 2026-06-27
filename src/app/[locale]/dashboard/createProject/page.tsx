@@ -126,7 +126,7 @@ export default function Page() {
                                     disabled={step === 1}
                                     onClick={() => stepSlider('backward')}
                                 >
-                                    <ArrowRight className="h-4 w-4" />
+                                    <ArrowLeft className="h-4 w-4" />
                                 </Button>
 
                                 {/* Forward Circle Action Button */}
@@ -138,7 +138,7 @@ export default function Page() {
                                     disabled={step === 3}
                                     onClick={() => stepSlider('forward')}
                                 >
-                                    <ArrowLeft className="h-4 w-4" />
+                                    <ArrowRight className="h-4 w-4" />
                                 </Button>
 
                                 {/* 3. Submit Button (Takes remaining width space) */}
