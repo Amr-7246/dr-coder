@@ -38,8 +38,8 @@ const initialFormState: ProjectFormState = {
 
 const stepOffsets: Record<number, string> = {
     1: "0%",
-    2: "100%",
-    3: "200%",
+    2: "-100%",
+    3: "-200%",
 }
 
 export default function Page() {
