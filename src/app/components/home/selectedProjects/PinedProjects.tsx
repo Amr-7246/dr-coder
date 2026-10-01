@@ -30,15 +30,11 @@ const PinedProjects = () => {
             const query = await frontProjects();
             if (query.success && query.data) {
                 setProjects(query.data);
-                console.log('DEBUG, HERE IS IT AMR :')
-                console.log(query.data)
             } else {
-                console.log('DEBUG, HERE IS IT AMR :')
-                console.log(query.error)
-                toast.error(query.error || 'Something went wrong loading Projects');
+                toast.error('Something went wrong while loading the pinned Projects');
             }
         } catch (err) {
-            toast.error('Failed to connect to the server' + err);
+            toast.error('Failed to connect to the server');
         } finally {
             setIsLoading(false);
         }

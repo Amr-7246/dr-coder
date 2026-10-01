@@ -15,7 +15,7 @@ const initialFormState: ProjectFormState = {
     title: "",
     slug: "",
     description: "",
-    status: "DRAFT",
+    status: "PUBLISHED",
     liveLink: null,
     repoLink: null,
     thumbUrl: "",
