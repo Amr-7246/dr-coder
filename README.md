@@ -1,8 +1,8 @@
-# <img src="docs/logo.png" alt="Dr.Coder Logo" width="55" align="center"> Dr.Coder
+# <img src="docs/logo.png" alt="Dr.Coder Logo" width="100" align="center"> Dr.Coder
 
 Dr.Coder is a personal projects hub designed primarily for non-technical clients and visitors.
 
-The project focuses on a clean, highly animated UI that presents technical work in a visually engaging and professional way, making each project understandable without requiring technical knowledge.
+a fullstack project focuses on a clean, highly animated UI that presents technical work in a visually engaging and professional way, making each project understandable without requiring technical knowledge.
 
 ## Preview
 
