@@ -10,6 +10,10 @@
 * 3D model integration to cleanly show the contact and my tech stack
 * Light animated background to add some dynamics to the site
 
+## Technology Stack ...
+* React | Next.js | TypeScript | GSAP | Tailwind CSS | Prisma 
+<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,prisma">
+
 ## Preview
 * Note: it is better to visit the site to see the animation
 <img src="docs/Screenshot 2025-07-28 133428.png" alt="Dr.Coder Preview" width="430">
@@ -22,8 +26,4 @@
 <img src="docs/photo_4_2025-07-19_17-48-56.jpg" alt="Dr.Coder Project Showcase" width="430">
 
 Note: More project visuals and promotional material are available in the [`docs`](./docs) directory.
-
-## Technology Stack ...
-* React | Next.js | TypeScript | GSAP | Tailwind CSS | Prisma 
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,prisma">
 
