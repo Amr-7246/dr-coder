@@ -24,6 +24,6 @@
 Note: More project visuals and promotional material are available in the [`docs`](./docs) directory.
 
 ## Technology Stack ...
-* React | Next.js | TypeScript | GSAP | Tailwind CSS
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind">
+* React | Next.js | TypeScript | GSAP | Tailwind CSS | Prisma 
+<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,prisma">
 
